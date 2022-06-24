@@ -3,6 +3,7 @@ package com.example.kotlintest
 import android.app.Person
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
@@ -14,7 +15,16 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(R.layout.activity_main)
 
         findViewById<Button>(R.id.do_dz_btn).setOnClickListener(this)
+
+        for (i in 1..5){
+            Log.d("$$$", "hello")
+        }
+
+        for (i in 3 downTo 0){
+            Log.d("$$$", "see u later")
+        }
     }
+
     private val firstPerson = Person("Евгений", "Сорокин")
     private val secondPerson = firstPerson.copy(name = "Александр")
 
@@ -24,4 +34,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         findViewById<TextView>(R.id.tf3).text = secondPerson.name
         findViewById<TextView>(R.id.tf4).text = secondPerson.surname
     }
+
+
 }
